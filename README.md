@@ -2,6 +2,9 @@
 
 A locally hosted web application to manage your 3D printing filament inventory and track usage.
 
+<img width="2525" height="1254" alt="image" src="https://github.com/user-attachments/assets/1378a133-4213-4609-80d1-053f03363813" />
+
+
 ## Features
 
 - **Inventory Management:** Track your spools, remaining weight, colors, and prices.
