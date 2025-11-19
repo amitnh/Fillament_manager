@@ -1,6 +1,6 @@
 @echo off
 echo Installing dependencies...
-pip install -r requirements.txt
+python -m pip install -r requirements.txt
 if %errorlevel% neq 0 (
     echo.
     echo [ERROR] Installation failed.
@@ -12,10 +12,10 @@ if %errorlevel% neq 0 (
 
 echo.
 echo Starting Backend...
-start "Filament Backend" cmd /k "uvicorn app.main:app --reload"
+start "Filament Backend" cmd /k "python -m uvicorn app.main:app --reload"
 
 echo Starting Frontend...
-start "Filament Dashboard" cmd /k "streamlit run dashboard.py"
+start "Filament Dashboard" cmd /k "python -m streamlit run dashboard.py"
 
 echo.
 echo Done! Both windows should be open.
