@@ -40,6 +40,180 @@ st.markdown("""
         white-space: normal;
         padding: 0.5rem;
     }
+    
+    /* Grid Card Alignment - ensure columns align at top */
+    div[data-testid="column"] {
+        display: flex;
+        flex-direction: column;
+        align-items: stretch;
+    }
+    
+    /* Ensure consistent card spacing */
+    div[data-testid="column"] > div {
+        width: 100%;
+    }
+    
+    /* Remove any gaps or borders between color bar and content */
+    div[data-testid="column"] > div > div:first-child {
+        margin-bottom: 0 !important;
+        border-bottom: none !important;
+    }
+    
+    /* Remove spacing after markdown divs that contain color bars */
+    div[data-testid="column"] > div > div[data-testid="stMarkdownContainer"] {
+        margin-bottom: 0 !important;
+        padding-bottom: 0 !important;
+    }
+    
+    /* Remove any spacing between markdown and following elements */
+    div[data-testid="column"] > div > div[data-testid="stMarkdownContainer"] + div {
+        margin-top: 0 !important;
+        padding-top: 0 !important;
+    }
+    
+    /* Ensure no white space between color bar div and content div */
+    div[data-testid="column"] > div > div[data-testid="stMarkdownContainer"] p {
+        margin: 0 !important;
+        padding: 0 !important;
+        line-height: 0 !important;
+    }
+    
+    /* Target the specific structure - remove gap after color bar */
+    div[data-testid="column"] > div > div[data-testid="stMarkdownContainer"] > div {
+        margin-bottom: 0 !important;
+    }
+    
+    /* Remove any gap between the markdown container and the next element */
+    div[data-testid="column"] > div > div[data-testid="stMarkdownContainer"] ~ div[data-testid="stVerticalBlock"] {
+        margin-top: -1rem !important;
+    }
+    
+    /* More aggressive: remove all spacing from markdown containers in columns */
+    div[data-testid="column"] div[data-testid="stMarkdownContainer"] {
+        margin: 0 !important;
+        padding: 0 !important;
+    }
+    
+    /* Remove spacing from the div inside markdown container */
+    div[data-testid="column"] div[data-testid="stMarkdownContainer"] > div {
+        margin: 0 !important;
+        padding: 0 !important;
+    }
+    
+    /* Ensure the content div that follows has no top margin */
+    div[data-testid="column"] div[data-testid="stMarkdownContainer"] + div[data-testid="stVerticalBlock"] {
+        margin-top: 0 !important;
+        padding-top: 0 !important;
+    }
+    
+    /* Aggressively remove white line - target the div structure */
+    div[data-testid="column"] > div > div[data-testid="stMarkdownContainer"] > div > div:first-child + div {
+        margin-top: 0 !important;
+        padding-top: 0 !important;
+        border-top: none !important;
+    }
+    
+    /* Remove any spacing from the markdown container's inner structure */
+    div[data-testid="column"] > div > div[data-testid="stMarkdownContainer"] > div {
+        margin: 0 !important;
+        padding: 0 !important;
+    }
+    
+    /* Target the specific div structure to remove gap */
+    div[data-testid="column"] > div > div[data-testid="stMarkdownContainer"] > div > div:first-child {
+        margin-bottom: 0 !important;
+        padding-bottom: 0 !important;
+    }
+    
+    /* Remove any gap between the color bar div and content div inside */
+    div[data-testid="column"] > div > div[data-testid="stMarkdownContainer"] > div > div:first-child ~ div {
+        margin-top: 0 !important;
+        padding-top: 0 !important;
+    }
+    
+    /* Most aggressive: remove ALL spacing from markdown containers in columns */
+    div[data-testid="column"] > div > div[data-testid="stMarkdownContainer"] {
+        margin: 0 !important;
+        padding: 0 !important;
+        line-height: 0 !important;
+    }
+    
+    /* Remove spacing from all child divs in markdown containers */
+    div[data-testid="column"] > div > div[data-testid="stMarkdownContainer"] > div > div {
+        margin: 0 !important;
+        padding: 0 !important;
+    }
+    
+    /* Specifically target the content div to pull it up */
+    div[data-testid="column"] > div > div[data-testid="stMarkdownContainer"] > div > div:last-child {
+        margin-top: 0 !important;
+        padding-top: 0.75rem !important;
+    }
+    
+    /* Remove any white space or gaps */
+    div[data-testid="column"] > div > div[data-testid="stMarkdownContainer"] > div > div:first-child {
+        margin-bottom: 0 !important;
+        padding-bottom: 0 !important;
+        border-bottom: none !important;
+    }
+    
+    /* Ensure color bar divs are visible */
+    div[data-testid="column"] > div > div[data-testid="stMarkdownContainer"] > div > div:first-child {
+        display: block !important;
+        visibility: visible !important;
+        opacity: 1 !important;
+    }
+    
+    /* Remove gap between color bar and content in the same container */
+    div[data-testid="column"] > div > div[data-testid="stContainer"] > div[data-testid="stMarkdownContainer"] > div > div:first-child + div {
+        margin-top: 0 !important;
+        padding-top: 0.75rem !important;
+    }
+    
+    /* CRITICAL: Remove all spacing from markdown container and its children */
+    div[data-testid="column"] > div > div[data-testid="stMarkdownContainer"] {
+        margin: 0 !important;
+        padding: 0 !important;
+        line-height: 0 !important;
+        font-size: 0 !important;
+    }
+    
+    /* Remove spacing from the root div inside markdown container */
+    div[data-testid="column"] > div > div[data-testid="stMarkdownContainer"] > div {
+        margin: 0 !important;
+        padding: 0 !important;
+        line-height: 0 !important;
+        font-size: 0 !important;
+    }
+    
+    /* Remove spacing from all paragraphs and elements inside markdown */
+    div[data-testid="column"] > div > div[data-testid="stMarkdownContainer"] p,
+    div[data-testid="column"] > div > div[data-testid="stMarkdownContainer"] * {
+        margin: 0 !important;
+        padding: 0 !important;
+        line-height: 0 !important;
+    }
+    
+    /* Ensure the color bar div has no bottom spacing */
+    div[data-testid="column"] > div > div[data-testid="stMarkdownContainer"] > div > div:first-child {
+        margin-bottom: 0 !important;
+        padding-bottom: 0 !important;
+        border-bottom: none !important;
+        display: block !important;
+    }
+    
+    /* Ensure the content div has no top spacing and starts immediately after color bar */
+    div[data-testid="column"] > div > div[data-testid="stMarkdownContainer"] > div > div:last-child {
+        margin-top: 0 !important;
+        padding-top: 0.75rem !important;
+        display: block !important;
+    }
+    
+    /* Remove any gap between the two divs */
+    div[data-testid="column"] > div > div[data-testid="stMarkdownContainer"] > div > div:first-child + div {
+        margin-top: 0 !important;
+        padding-top: 0.75rem !important;
+    }
 </style>
 """, unsafe_allow_html=True)
 # ---------------------------------------------
@@ -72,116 +246,181 @@ if page == "Inventory":
     if not filaments:
         st.info("No filaments found. Add some in the 'Add Filament' tab!")
     else:
-        # Filters
-        col1, col2 = st.columns(2)
-        with col1:
-            show_low_stock = st.checkbox("Show Low Stock Only")
-        
-        if show_low_stock:
-            filaments = [f for f in filaments if f['remaining_weight'] < 100]
-
-        for f in filaments:
-            with st.container():
-                # Visual Color Box Logic
-                color_hex = f.get('color_hex', '#000000')
-                if not color_hex: color_hex = "#000000"
+        # Filters section
+        with st.expander("🔍 Filters", expanded=False):
+            filter_col1, filter_col2, filter_col3 = st.columns(3)
+            
+            with filter_col1:
+                st.subheader("Material Type")
+                # Get all unique material types
+                all_materials = sorted(set([f['material'] for f in filaments]))
                 
-                if "," in color_hex:
-                    colors = color_hex.split(",")
-                    bg_style = f"background: linear-gradient(45deg, {colors[0]} 50%, {colors[1]} 50%);"
-                else:
-                    bg_style = f"background-color: {color_hex};"
-
-                # Layout
-                c1, c2, c3, c4 = st.columns([3, 3, 4, 2])
+                # Initialize session state for material filters
+                if 'material_filters' not in st.session_state:
+                    st.session_state.material_filters = {mat: True for mat in all_materials}
                 
-                with c1:
-                    st.subheader(f"{f['brand']} {f['material']}")
-                    st.caption(f"Color: {f['color_name']}")
-                    st.caption(f"ID: {f['id']}")
-                
-                with c2:
-                    # Color Preview
-                    st.markdown(
-                        f'<div style="{bg_style} width: 100%; height: 40px; border-radius: 5px; border: 1px solid #ccc; box-shadow: 2px 2px 5px rgba(0,0,0,0.1);"></div>',
-                        unsafe_allow_html=True
+                # Create checkboxes for each material type
+                selected_materials = []
+                for material in all_materials:
+                    checked = st.checkbox(
+                        material, 
+                        value=st.session_state.material_filters.get(material, True),
+                        key=f"filter_mat_{material}"
                     )
-                    if f.get('is_multicolor'):
-                        st.caption("🌈 Multi-color")
-                
-                with c3:
-                    # Progress Bar & Weight
+                    st.session_state.material_filters[material] = checked
+                    if checked:
+                        selected_materials.append(material)
+            
+            with filter_col2:
+                st.subheader("Stock Status")
+                show_low_stock = st.checkbox("Show Low Stock Only (< 100g)")
+                show_empty = st.checkbox("Show Empty (0g)")
+            
+            with filter_col3:
+                st.subheader("Search")
+                search_text = st.text_input("Search by brand/color", placeholder="e.g., Generic, black, gold")
+        
+        # Apply filters
+        filtered_filaments = filaments.copy()
+        
+        # Material type filter
+        if selected_materials:
+            filtered_filaments = [f for f in filtered_filaments if f['material'] in selected_materials]
+        
+        # Low stock filter
+        if show_low_stock:
+            filtered_filaments = [f for f in filtered_filaments if f['remaining_weight'] < 100]
+        
+        # Empty filter
+        if not show_empty:
+            filtered_filaments = [f for f in filtered_filaments if f['remaining_weight'] > 0]
+        
+        # Search filter
+        if search_text:
+            search_lower = search_text.lower()
+            filtered_filaments = [
+                f for f in filtered_filaments 
+                if search_lower in f['brand'].lower() 
+                or search_lower in f['color_name'].lower()
+                or search_lower in f['material'].lower()
+            ]
+        
+        # Show filter results count
+        if len(filtered_filaments) != len(filaments):
+            st.info(f"Showing {len(filtered_filaments)} of {len(filaments)} filaments")
+        
+        filaments = filtered_filaments
+        
+        if not filaments:
+            st.warning("No filaments match the selected filters.")
+        else:
+            # Grid layout - 5 columns
+            num_cols = 5
+            cols = st.columns(num_cols)
+            
+            for idx, f in enumerate(filaments):
+                col_idx = idx % num_cols
+                with cols[col_idx]:
+                    # Visual Color Box Logic
+                    color_hex = f.get('color_hex', '#000000')
+                    if not color_hex: color_hex = "#000000"
+                    
+                    if "," in color_hex:
+                        colors = color_hex.split(",")
+                        bg_style = f"background: linear-gradient(45deg, {colors[0]} 50%, {colors[1]} 50%);"
+                    else:
+                        bg_style = f"background-color: {color_hex};"
+                    
+                    # Weight info
                     remaining = f['remaining_weight']
                     initial = f['initial_weight']
                     progress = max(0.0, min(1.0, remaining / initial))
+                    percentage = int(progress * 100)
                     
-                    st.progress(progress)
-                    st.write(f"**{remaining:.1f}g** / {initial:.0f}g")
-                
-                with c4:
-                    # Edit Button
-                    with st.expander("✏️ Edit"):
-                        with st.form(f"edit_form_{f['id']}"):
-                            # Editable fields
-                            new_brand = st.text_input("Brand", value=f['brand'], key=f"brand_{f['id']}")
-                            new_material = st.text_input("Material", value=f['material'], key=f"mat_{f['id']}")
-                            new_color_name = st.text_input("Color Name", value=f['color_name'], key=f"cn_{f['id']}")
-                            
-                            new_weight = st.number_input("Current Weight (g)", value=float(remaining), key=f"w_{f['id']}")
-                            new_price = st.number_input("Price ($)", value=float(f['price']), key=f"p_{f['id']}")
-                            
-                            # Color Editing
-                            st.divider()
-                            new_is_multicolor = st.checkbox("Multi-color?", value=f.get('is_multicolor', False), key=f"mc_{f['id']}")
-                            
-                            current_hex = f.get('color_hex', '#000000')
-                            if not current_hex: current_hex = "#000000"
-                            
-                            new_color_hex = current_hex
-
-                            if new_is_multicolor:
-                                c_col1, c_col2 = st.columns(2)
-                                # Try to parse existing colors
-                                colors = ["#FF0000", "#0000FF"]
-                                if "," in current_hex:
-                                    parts = current_hex.split(",")
-                                    if len(parts) >= 2:
-                                        colors = [p.strip() for p in parts[:2]]
+                    # Card wrapper - single seamless container
+                    with st.container():
+                        st.markdown(
+                            f"""
+                            <div style="border: 1px solid #ddd; border-radius: 8px; overflow: hidden; margin-bottom: 1rem; background: white; box-shadow: 0 2px 4px rgba(0,0,0,0.1);">
+                                <div style="{bg_style} width: 100%; height: 50px; margin: 0; padding: 0; display: block; line-height: 0; font-size: 0;"></div>
+                                <div style="padding: 0.75rem; margin: 0; margin-top: 0 !important;">
+                            """,
+                            unsafe_allow_html=True
+                        )
+                        
+                        st.markdown(f"**{f['brand']} {f['material']}**")
+                        # Put color name and multi-color indicator on same line
+                        multicolor_indicator = " 🌈 Multi-color" if f.get('is_multicolor') else ""
+                        st.caption(f"{f['color_name']}{multicolor_indicator}")
+                        
+                        st.progress(progress)
+                        st.caption(f"{remaining:.0f}g / {initial:.0f}g")
+                        st.caption(f"ID: {f['id']} | {f['price']:.0f} ₪")
+                        
+                        # Edit button (inside container)
+                        with st.expander("✏️ Edit", expanded=False):
+                            with st.form(f"edit_form_{f['id']}"):
+                                # Editable fields
+                                new_brand = st.text_input("Brand", value=f['brand'], key=f"brand_{f['id']}")
+                                new_material = st.text_input("Material", value=f['material'], key=f"mat_{f['id']}")
+                                new_color_name = st.text_input("Color Name", value=f['color_name'], key=f"cn_{f['id']}")
                                 
-                                with c_col1:
-                                    col1 = st.color_picker("Color 1", value=colors[0] if colors[0].startswith("#") else "#FF0000", key=f"c1_{f['id']}")
-                                with c_col2:
-                                    col2 = st.color_picker("Color 2", value=colors[1] if colors[1].startswith("#") else "#0000FF", key=f"c2_{f['id']}")
-                                new_color_hex = f"{col1},{col2}"
-                            else:
-                                # Single color
-                                val = current_hex if "," not in current_hex and current_hex.startswith("#") else "#000000"
-                                new_color_hex = st.color_picker("Color Hex", value=val, key=f"chex_{f['id']}")
-                            
-                            st.divider()
+                                new_weight = st.number_input("Current Weight (g)", value=float(remaining), key=f"w_{f['id']}")
+                                new_price = st.number_input("Price (NIS)", value=float(f['price']), key=f"p_{f['id']}")
+                                
+                                # Color Editing
+                                st.divider()
+                                new_is_multicolor = st.checkbox("Multi-color?", value=f.get('is_multicolor', False), key=f"mc_{f['id']}")
+                                
+                                current_hex = f.get('color_hex', '#000000')
+                                if not current_hex: current_hex = "#000000"
+                                
+                                new_color_hex = current_hex
 
-                            if st.form_submit_button("Update"):
-                                payload = {
-                                    "brand": new_brand,
-                                    "material": new_material,
-                                    "color_name": new_color_name,
-                                    "remaining_weight": new_weight,
-                                    "price": new_price,
-                                    "color_hex": new_color_hex,
-                                    "is_multicolor": new_is_multicolor
-                                }
-                                try:
-                                    res = requests.put(f"{API_URL}/filament/{f['id']}", json=payload)
-                                    if res.status_code == 200:
-                                        st.success("Updated!")
-                                        st.cache_data.clear()
-                                        st.rerun()
-                                    else:
-                                        st.error(f"Error: {res.text}")
-                                except Exception as e:
-                                    st.error(f"Conn Error: {e}")
+                                if new_is_multicolor:
+                                    c_col1, c_col2 = st.columns(2)
+                                    # Try to parse existing colors
+                                    colors = ["#FF0000", "#0000FF"]
+                                    if "," in current_hex:
+                                        parts = current_hex.split(",")
+                                        if len(parts) >= 2:
+                                            colors = [p.strip() for p in parts[:2]]
+                                    
+                                    with c_col1:
+                                        col1 = st.color_picker("Color 1", value=colors[0] if colors[0].startswith("#") else "#FF0000", key=f"c1_{f['id']}")
+                                    with c_col2:
+                                        col2 = st.color_picker("Color 2", value=colors[1] if colors[1].startswith("#") else "#0000FF", key=f"c2_{f['id']}")
+                                    new_color_hex = f"{col1},{col2}"
+                                else:
+                                    # Single color
+                                    val = current_hex if "," not in current_hex and current_hex.startswith("#") else "#000000"
+                                    new_color_hex = st.color_picker("Color Hex", value=val, key=f"chex_{f['id']}")
+                                
+                                st.divider()
 
-                st.divider()
+                                if st.form_submit_button("Update"):
+                                    payload = {
+                                        "brand": new_brand,
+                                        "material": new_material,
+                                        "color_name": new_color_name,
+                                        "remaining_weight": new_weight,
+                                        "price": new_price,
+                                        "color_hex": new_color_hex,
+                                        "is_multicolor": new_is_multicolor
+                                    }
+                                    try:
+                                        res = requests.put(f"{API_URL}/filament/{f['id']}", json=payload)
+                                        if res.status_code == 200:
+                                            st.success("Updated!")
+                                            st.cache_data.clear()
+                                            st.rerun()
+                                        else:
+                                            st.error(f"Error: {res.text}")
+                                    except Exception as e:
+                                        st.error(f"Conn Error: {e}")
+                        
+                        # Card wrapper - end (close content div and outer div)
+                        st.markdown("</div></div>", unsafe_allow_html=True)
 
 elif page == "Add Filament":
     st.header("➕ Add New Spool")
@@ -207,7 +446,7 @@ elif page == "Add Filament":
                 color_hex = st.color_picker("Color Hex", "#000000")
                 
             initial_weight = st.number_input("Initial Weight (g)", value=1000.0, step=100.0)
-            price = st.number_input("Price ($)", value=24.99, step=1.0)
+            price = st.number_input("Price (NIS)", value=72.0, step=1.0)
         
         submitted = st.form_submit_button("Add Filament")
         
